@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.support.v4.app.*;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -75,6 +77,23 @@ public class MainActivity extends AppCompatActivity {
         getAxisPoints();//获取坐标点
         initLineChart();//初始化
 
+    }
+    //建立页面和菜单栏的连接
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.control,menu);
+        return true;
+    }
+    //菜单项功能设置
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId()==R.id.weight){
+            Intent config= new Intent(this, MainActivity.class );
+            startActivity(config);
+        }
+        if(item.getItemId()==R.id.memo){
+            Intent config= new Intent(this, Main2Activity.class );
+            startActivity(config);
+        }
+        return  super.onOptionsItemSelected(item);
     }
     public void add(View v){
 
