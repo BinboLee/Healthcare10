@@ -1,10 +1,12 @@
 package com.example.healthcare10;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.app.*;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    String[] date = {"0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0","0-0"};
-    int[] score= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};//图表的数据点
+    String[] date = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"};
+    int[] score= {600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600,600};//图表的数据点
     //int[] score= {0,0,0,0,0,0,0,0,0,0};
     public List<PointValue> mPointValues = new ArrayList<PointValue>();
     public List<AxisValue> mAxisXValues = new ArrayList<AxisValue>();
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Manager manager=new Manager(this);
-        manager.deleteAll();
+
         List<Item> testlist = manager.listAll();
         int length=0;
         for (Item i : testlist){
@@ -74,7 +76,20 @@ public class MainActivity extends AppCompatActivity {
         initLineChart();//初始化
 
     }
+    public void add(View v){
 
+        EditText et=findViewById(R.id.editText);
+        Manager manager=new Manager(this);
+        manager.add(new Item(et.getText().toString()));
+        Intent config= new Intent(this, MainActivity.class );
+        startActivity(config);
+    }
+    public void clear(View v){
+        Manager manager=new Manager(this);
+        manager.deleteAll();
+        Intent config= new Intent(this, MainActivity.class );
+        startActivity(config);
+    }
     /**
      * 设置X 轴的显示
      */
