@@ -41,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG="wow";
 
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Manager manager=new Manager(this);
@@ -50,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         for (Item i : testlist){
             //Log.i(TAG, "onCreate: id +" +i.getWEIGHT());
             length++;
-            Log.i(TAG, "onCreate: id +" +length);
+            //Log.i(TAG, "onCreate: id +" +length);
         }
 
         int[] temp=new int[length];
@@ -58,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         for (Item m : testlist){
             temp[j]=Integer.parseInt(m.getWEIGHT());
             j++;
-            Log.i(TAG, "onCreate: id +" +"...................................");
+            //Log.i(TAG, "onCreate: id +" +"...................................");
         }
         if(j<30){
             for(int i=0;i<j;i++){
