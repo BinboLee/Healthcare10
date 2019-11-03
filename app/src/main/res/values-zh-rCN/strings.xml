@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">体重与日常</string>
+    <string name="str1">添加今日体重</string>
+    <string name="str2">清空本月体重</string>
+    <string name="str3">今日体重(0.1kg)</string>
+    <string name="str4">体重管理</string>
+    <string name="str5">备忘录</string>
+    <string name="str6">新的事务</string>
+</resources>
