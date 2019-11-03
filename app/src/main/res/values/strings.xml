@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Healthcare1.0</string>
+    <string name="app_name">Healthcare</string>
     <string name="str1">ADD</string>
     <string name="str2">clear</string>
     <string name="str3">Today\'s Weight</string>
     <string name="str4">weight</string>
     <string name="str5">memo</string>
+    <string name="str6">ADD</string>
 </resources>
